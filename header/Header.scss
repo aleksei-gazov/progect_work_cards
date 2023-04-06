@@ -1,0 +1,24 @@
+.header {
+  border: grey solid 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+  .logo {
+    border: grey solid 2px;
+    width: 200px;
+  }
+  .info {
+    border: grey solid 2px;
+    width: 100px;
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .info_data {
+    border: grey solid 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  }
+}
