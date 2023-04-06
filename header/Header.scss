@@ -4,13 +4,17 @@
   flex-direction: row;
   justify-content: space-between;
   height: 100px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  bottom: 0;
   .logo {
     border: grey solid 2px;
     width: 200px;
   }
   .info {
     border: grey solid 2px;
-    width: 100px;
+    width: 150px;
     display: flex;
   flex-direction: row;
   justify-content: space-between;
