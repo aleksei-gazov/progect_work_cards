@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { useAppDispatch } from '../app/store';
-import { Input } from '../comman/components/Input/Input';
+import { useAppDispatch, useAppSelector } from '../../app/store';
+import { Input } from '../../comman/components/Input/Input';
 import './Profile.scss';
 
 
 export const Profile =() => {
-const dispatch = useAppDispatch()
-const 
+const dispatch = useAppDispatch
+
   const onClickHandler = () => {
-dispatch()
+// dispatch()
   }
 
   return (
@@ -17,7 +17,7 @@ dispatch()
       <h3>Personal Information</h3>
 <div className='info'>
   <div className='avatar'>
-    Avatar
+    <p>Avatar</p>
   </div>
   <div className='info_data'>
     <h3>Name</h3>

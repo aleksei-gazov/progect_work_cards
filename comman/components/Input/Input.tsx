@@ -3,12 +3,19 @@ import './Input.scss';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export const Input =() => {
+type InputPropsType = {
+status: string
+}
+
+export const Input: React.FC<InputPropsType> =({status}) => {
 const [value, setValue] =React.useState('')
 
 const onChangeHandler = (e) => {
   setValue(e.currentTarget.value)
 }
+React.useEffect(()=> {
+  setValue(status)
+}, [status])
 
   return (
 <Box

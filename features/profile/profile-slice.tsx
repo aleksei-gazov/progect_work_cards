@@ -1,7 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
+const getProfile = createAsyncThunk(
+  'profile/setProfile',
+  async ()=> {
 
+})
 
 const profileSlice = createSlice({
   name: 'profile',

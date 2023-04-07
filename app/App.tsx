@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { Header } from '../features/header/Header';
 import { Profile } from '../features/profile/Profile';
-import { Header } from '../header/Header';
 import './style.css';
 
 export default function App() {
