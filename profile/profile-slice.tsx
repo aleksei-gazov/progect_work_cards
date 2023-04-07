@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
+
+
 const profileSlice = createSlice({
   name: 'profile',
   initialState: {
@@ -11,5 +13,5 @@ const profileSlice = createSlice({
   }
 })
 
-export const tasksReducer = profileSlice.reducer
+export const profileReducer = profileSlice.reducer
 export const {} = profileSlice.actions

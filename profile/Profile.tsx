@@ -1,8 +1,14 @@
 import * as React from 'react';
+import { Input } from '../comman/components/Input/Input';
 import './Profile.scss';
 
 
 export const Profile =() => {
+
+  const onClickHandler = () => {
+
+  }
+
   return (
     <div className='profile'>
       <div className='containerPR'>
@@ -14,7 +20,8 @@ export const Profile =() => {
   <div className='info_data'>
     <h3>Name</h3>
     <div>
-    <p>Status</p><img src="" alt=""/>
+    <p onClick={onClickHandler}>Status</p><img src="" alt=""/>
+    <Input/>
     </div>
    <a href="#">email</a>
    <button>Log Out</button>

@@ -1,11 +1,10 @@
 import {AnyAction, configureStore, ThunkAction, ThunkDispatch} from "@reduxjs/toolkit";
-import { authReducer } from "./auth-slice";
  import thunk from 'redux-thunk';
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
-
+import { profileReducer } from "../profile/profile-slice";
 const store = configureStore({
     reducer: {
-         auth: authReducer
+         profile: profileReducer
     },
     middleware: (getDefaultMiddleware) =>  getDefaultMiddleware().prepend(thunk)// можно это и не писать т.к. санка идет по дефолту
 })
