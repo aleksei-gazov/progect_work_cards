@@ -1,7 +1,7 @@
 import {AnyAction, configureStore, ThunkAction, ThunkDispatch} from "@reduxjs/toolkit";
  import thunk from 'redux-thunk';
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
-import { profileReducer } from "../profile/profile-slice";
+import { profileReducer } from "../features/profile/profile-slice";
 const store = configureStore({
     reducer: {
          profile: profileReducer

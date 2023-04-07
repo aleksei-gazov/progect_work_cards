@@ -4,6 +4,12 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
 export const Input =() => {
+const [value, setValue] =React.useState('')
+
+const onChangeHandler = (e) => {
+  setValue(e.currentTarget.value)
+}
+
   return (
 <Box
       component="form"
@@ -13,7 +19,7 @@ export const Input =() => {
       noValidate
       autoComplete="off"
     >
-      <TextField id="standard-basic" label="Standard" variant="standard" />
+      <TextField value={value} onChange={onChangeHandler} id="standard-basic" label="Standard" variant="standard" />
     </Box>
  
   );

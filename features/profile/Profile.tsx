@@ -1,12 +1,14 @@
 import * as React from 'react';
+import { useAppDispatch } from '../app/store';
 import { Input } from '../comman/components/Input/Input';
 import './Profile.scss';
 
 
 export const Profile =() => {
-
+const dispatch = useAppDispatch()
+const 
   const onClickHandler = () => {
-
+dispatch()
   }
 
   return (
