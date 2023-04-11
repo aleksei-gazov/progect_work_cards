@@ -1,8 +1,9 @@
 import * as React from 'react';
 import './Header.scss';
+import { useAppDispatch, useAppSelector } from '../../app/store';
 
 export const Header =() => {
-
+  const user = useAppSelector(state=> state.profile.user)
 
 
   return (
@@ -12,11 +13,11 @@ LOGO
      </div>
      <div className='info'>
        <div className='info_data'>
-         <h5>Name</h5>
-         <p >Status</p>
+         <h5>{user.name}</h5>
+         <p >{user.status}</p>
        </div>
        <div className='avatar'>
-         Avatar
+       {user.avatar}
        </div>
      </div>
     </div>

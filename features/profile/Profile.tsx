@@ -9,9 +9,14 @@ import { EditableSpan } from '../../comman/components/editableSpan/EditableSpan'
 export const Profile =() => {
 const dispatch = useAppDispatch
 const isLoginIn = useAppSelector(state=> state.profile.isLoginIn)
+const user = useAppSelector(state=> state.profile.user)
 
   const onClickHandler = () => {
 // dispatch()
+  }
+  const logOutHandler = () => {
+   // dispatch() logout
+   // dispatch() islogin true
   }
 React.useEffect(()=>{
   // dispatch(getProfile())
@@ -26,17 +31,20 @@ if(isLoginIn) {
       <h3>Personal Information</h3>
 <div className='info'>
   <div className='avatar'>
-    <p>Avatar</p>
+    <p>{user.avatar}</p>
   </div>
   <div className='info_data'>
-    <h3>Name</h3>
+    <h3>{user.name}</h3>
     <div>
-      {/* <EditableSpan/> */}
+      <EditableSpan
+      title={user.status}
+      onChange={onClickHandler}
+      />
     {/* <p onClick={onClickHandler}>Status</p><img src="" alt=""/>
     <Input/> */}
     </div>
-   <a href="#">email</a>
-   <button>Log Out</button>
+   <a href="#">{user.email}</a>
+   <button onClick={logOutHandler}>Log Out</button>
   </div>
       </div>
 

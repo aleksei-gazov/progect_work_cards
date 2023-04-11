@@ -11,6 +11,10 @@ const instance = axios.create({
     ...settings
 })
 
-const profileApi = () => {
-// me()
-}
+
+    export const profileAPI = {
+        me() {
+            const promise = instance.post('auth/me', {});
+            return promise;
+        }
+    }
