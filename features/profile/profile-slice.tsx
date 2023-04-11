@@ -5,13 +5,13 @@ import { profileAPI } from "../../api/profileApi";
 export const getProfile = createAsyncThunk(
   'profile/setProfile',
   async () => {
-    try{
-      await profileAPI.me()
-      return {isLoginIn:true}
-  }
-  catch (e:any){
-      return isRejectedWithValue(e)
-  }
+  //   try{
+  //     await profileAPI.me()
+  //     return {isLoginIn:true}
+  // }
+  // catch (e:any){
+  //     return isRejectedWithValue(e)
+  // }
 }
 )
 // const registerThunk = createAsyncThunk<{ isRegistered:boolean } , { email: string, password: string }, { rejectValue:string, state:AppRootState }>
