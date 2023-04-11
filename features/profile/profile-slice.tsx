@@ -27,20 +27,6 @@ export const updateStatus = createAsyncThunk(
   }
 })
 
-// const registerThunk = createAsyncThunk<{ isRegistered:boolean } , { email: string, password: string }, { rejectValue:string, state:AppRootState }>
-// ("auth/register", async (arg, thunkAPI)=>{
-//     const {rejectWithValue} = thunkAPI
-//     try{
-//         await registrationAPI.register(arg.email, arg.password)
-
-//         return {isRegistered:true}
-//     }
-//     catch (e:any){
-//         return rejectWithValue(e)
-//     }
-// })
-
-
 const profileSlice = createSlice({
   name: 'profile',
   initialState: {

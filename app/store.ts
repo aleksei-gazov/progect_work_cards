@@ -5,6 +5,7 @@ import { profileReducer } from "../features/profile/profile-slice";
 const store = configureStore({
     reducer: {
          profile: profileReducer
+         
     },
     middleware: (getDefaultMiddleware) =>  getDefaultMiddleware().prepend(thunk)// можно это и не писать т.к. санка идет по дефолту
 })
