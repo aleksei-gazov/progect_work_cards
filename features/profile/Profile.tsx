@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../app/store';
 import { Input } from '../../comman/components/Input/Input';
 import './Profile.scss';
 import {Navigate} from 'react-router-dom';
-import { getProfile } from './profile-slice';
+import { getProfile, profileThunks } from './profile-slice';
 import { EditableSpan } from '../../comman/components/editableSpan/EditableSpan';
 
 export const Profile =() => {
@@ -11,13 +11,14 @@ const dispatch = useAppDispatch
 const isLoginIn = useAppSelector(state=> state.profile.isLoginIn)
 const user = useAppSelector(state=> state.profile.user)
 
-  const onClickHandler = () => {
-// dispatch()
+  const updateStatus = (e) => {
+ dispatch(profileThunks.updateStatus('new status'))
   }
   const logOutHandler = () => {
    // dispatch() logout
    // dispatch() islogin true
   }
+
 React.useEffect(()=>{
   // dispatch(getProfile())
 },[])
@@ -38,10 +39,8 @@ if(isLoginIn) {
     <div>
       <EditableSpan
       title={user.status}
-      onChange={onClickHandler}
+      onChange={updateStatus}
       />
-    {/* <p onClick={onClickHandler}>Status</p><img src="" alt=""/>
-    <Input/> */}
     </div>
    <a href="#">{user.email}</a>
    <button onClick={logOutHandler}>Log Out</button>

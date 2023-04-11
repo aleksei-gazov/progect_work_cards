@@ -12,9 +12,12 @@ const settings = {
 // })
 
 
-//     export const profileAPI = {
-//         me() {
-//             const promise = instance.post('auth/me', {});
-//             return promise;
-//         }
-//     }
+    export const profileAPI = {
+        me() {
+            return instance.post('auth/me', {});
+           
+        },
+        updateStatus() {
+            return instance.patch('auth/me', {}); //put or patch????
+        }
+    }
