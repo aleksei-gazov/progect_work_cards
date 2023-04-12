@@ -14,7 +14,6 @@ const settings = {
 
     export const passwordAPI = {
         changePassword() {
-            return instance.put('auth/me', {}); //or patch response
-           
+            return instance.put('auth/me', {}); //or patch response  
         }
     }

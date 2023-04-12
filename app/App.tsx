@@ -8,8 +8,8 @@ import './style.css';
 export default function App() {
   return (
     <div className='container'>
-     {/* <Header/>
-     <Profile/> */}
+     <Header/>
+     {/* <Profile/> */}
      {/* <Login/> */}
      {/* <Registration/> */}
     </div>

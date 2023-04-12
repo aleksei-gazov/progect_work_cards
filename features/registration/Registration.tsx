@@ -10,9 +10,11 @@ import Button from '@mui/material/Button';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import { Visibility, VisibilityOff } from '@mui/icons-material'
+import Typography from '@mui/material/Typography';
+import { NavLink } from 'react-router-dom';
+// import IconButton from '@mui/material/IconButton';
+// import InputAdornment from '@mui/material/InputAdornment';
+// import { Visibility, VisibilityOff } from '@mui/icons-material'
 
 type UserSubmitForm = {
   email: string;
@@ -68,11 +70,9 @@ export const Registration = () => {
                         />
                         <TextField type="password" label="confirm password"
                                    margin="normal"
-                                   {...register('confirmPassword')}
-                              
-                                                  
+                                   {...register('confirmPassword')}                        
                         />
-                             <InputAdornment position="end">
+                             {/* <InputAdornment position="end">
                                    <IconButton
                                      aria-label="toggle password visibility"
                                     //  onClick={handleClickShowPassword}
@@ -81,23 +81,38 @@ export const Registration = () => {
                                    >
                                      {true ? <VisibilityOff /> : <Visibility />}
                                    </IconButton>
-                                 </InputAdornment>
+                                 </InputAdornment> */}
                           
                         <Button type={'submit'} variant={'contained'} color={'primary'}
-                        //    style={{
-                        //     borderRadius: "30px",
-                        //     marginTop: "40px",
-                        //     width: "100%",
-                        //     padding: "17px 0",
-                        //     fontSize:"16px",
-                        //     fontWeight:"500"
-                        // }}
+                           style={{
+                            borderRadius: "30px",
+                            marginTop: "40px",
+                            width: "100%",
+                            padding: "10px 0",
+                            fontSize:"16px",
+                            fontWeight:"500"
+                        }}
                         >
                             Sing Up
                         </Button>
                     </FormGroup>
+                    <Typography
+              fontSize={'14px'}
+              fontWeight={'500'}
+              color={'#0000008a'}
+              variant={'caption'}
+              margin={'30px 0 10px'}
+            >
+              Already have an account?
+            </Typography>
+                    {/* <FormLabel>
+                    <p>Already have an account?</p>
+                    </FormLabel> */}
                 </FormControl>
             </form>
+            <NavLink to={'/login'} style={{ fontSize: '16px', fontWeight: '600' }}>
+              Sign In
+            </NavLink>
         </Grid>
     </Grid>
 }
