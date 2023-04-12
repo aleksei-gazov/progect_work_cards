@@ -12,7 +12,8 @@ const isLoginIn = useAppSelector(state=> state.profile.isLoginIn)
 const user = useAppSelector(state=> state.profile.user)
 
   const updateStatus = (e) => {
- dispatch(profileThunks.updateStatus('new status'))
+    console.log('change status')
+//  dispatch(profileThunks.updateStatus('new status'))
   }
   const logOutHandler = () => {
    // dispatch() logout

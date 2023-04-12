@@ -35,7 +35,7 @@ const schema = yup.object({
 })
 
 
-export const Registration = () => {
+export const ChangePassword = () => {
 
     const isRegistered = useAppSelector(state => state.auth.isRegistered)
     const dispatch = useAppDispatch()
