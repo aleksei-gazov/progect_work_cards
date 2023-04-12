@@ -11,7 +11,7 @@ export default function App() {
      {/* <Header/>
      <Profile/> */}
      {/* <Login/> */}
-     <Registration/>
+     {/* <Registration/> */}
     </div>
   );
 }
