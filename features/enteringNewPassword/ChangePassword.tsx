@@ -88,15 +88,15 @@ export const ChangePassword = () => {
                                     type={showPassword ? 'text' : 'password'}
                                     {...register('password')}
                                     endAdornment={
-                                        <InputAdornment position="end">
-                                            <IconButton
-                                                aria-label="toggle password visibility"
-                                                onClick={handleClickShowPassword}
-                                                // onMouseDown={handleMouseDownPassword}
-                                            >
-                                                {showPassword ? <VisibilityOff/> : <Visibility/>}
-                                            </IconButton>
-                                        </InputAdornment>
+                                        // <InputAdornment position="end">
+                                        //     <IconButton
+                                        //         aria-label="toggle password visibility"
+                                        //         onClick={handleClickShowPassword}
+                                        //         // onMouseDown={handleMouseDownPassword}
+                                        //     >
+                                        //         {showPassword ? <VisibilityOff/> : <Visibility/>}
+                                        //     </IconButton>
+                                        // </InputAdornment>
                                     }
                                 />
                                 <p style={{color:"red", fontSize:"12px"}}>{errors.password?.message}</p>
@@ -108,14 +108,14 @@ export const ChangePassword = () => {
                                     type={showConfirmPassword ? 'text' : 'password'}
                                     {...register('confirmPassword')}
                                     endAdornment={
-                                        <InputAdornment position="end">
-                                            <IconButton
-                                                aria-label="toggle password visibility"
-                                                onClick={handleClickShowConfirmPassword}
-                                            >
-                                                {showConfirmPassword ? <VisibilityOff/> : <Visibility/>}
-                                            </IconButton>
-                                        </InputAdornment>
+                                        // <InputAdornment position="end">
+                                        //     <IconButton
+                                        //         aria-label="toggle password visibility"
+                                        //         onClick={handleClickShowConfirmPassword}
+                                        //     >
+                                        //         {showConfirmPassword ? <VisibilityOff/> : <Visibility/>}
+                                        //     </IconButton>
+                                        // </InputAdornment>
                                     }
                                 />
                                 <p style={{color:"red", fontSize:"12px"}}>{errors.confirmPassword?.message}</p>
