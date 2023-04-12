@@ -15,7 +15,10 @@ import axios from 'axios'
         },
         login<RequiredLoginDataType, ResponseDataType>(data: RequiredLoginDataType) {
             return instance.post('auth/login', {}); //put or patch????
-        }
+        },
+        changePassword() {
+          return instance.put('auth/me', {}); //or patch response  куда слать запрос???
+      }
     }
     export type RequiredLoginDataType = {
       email: string

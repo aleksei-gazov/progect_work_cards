@@ -46,7 +46,7 @@ export const Registration = () => {
         resolver: yupResolver(validationSchema)
       });
     
-      const onSubmit = (data: UserSubmitForm) => {
+      const onSubmit = (data) => {
         console.log(JSON.stringify(data));
       };
 

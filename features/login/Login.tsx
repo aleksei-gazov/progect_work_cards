@@ -10,14 +10,19 @@ import Button from '@mui/material/Button';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { useAppSelector } from '../../app/store';
 
 type UserSubmitForm = {
   email: string;
   password: string;
-  confirmPassword: string;
+  rememberMe: boolean;
 };
 
 export const Login = () => {
+  const isLoggedIn = useAppSelector<boolean>(state => state.auth.isLoggedIn)
+
+
+
     const validationSchema = Yup.object().shape({
         email: Yup.string()
           .required('Email is required')
@@ -26,10 +31,8 @@ export const Login = () => {
           .required('Password is required')
           .min(6, 'Password must be at least 6 characters')
           .max(40, 'Password must not exceed 40 characters'),
-        confirmPassword: Yup.string()
-        .required('Password is required')
-        .min(6, 'Password must be at least 6 characters')
-        .max(40, 'Password must not exceed 40 characters'),
+          rememberMe: Yup.boolean()
+        .required('remember is required')
       });
     
       const {
@@ -51,7 +54,7 @@ export const Login = () => {
             <form  onSubmit={handleSubmit(onSubmit)}>
                 <FormControl>
                     <FormLabel>
-                    <h3>Sing Up</h3>
+                    <h3>Sing Ip</h3>
                     </FormLabel>
                     <FormGroup>
                         <TextField
@@ -63,10 +66,11 @@ export const Login = () => {
                                    margin="normal"
                                    {...register('password')}
                         />
-                        <TextField type="password" label="confirm password"
-                                   margin="normal"
-                                   {...register('confirmPassword')}
-                        />
+                       <FormControlLabel
+                sx={{ width: '100%', textAlign: 'left' }}
+                label={'Remember me'}
+                control={<Checkbox {...register('rememberMe')} />}
+              />
                         <Button type={'submit'} variant={'contained'} color={'primary'}
                         //    style={{
                         //     borderRadius: "30px",

@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { profileAPI } from "../../api/profileApi";
+import { authAPI } from "../../api/authAPI";
+import { AppRootState } from "../../app/store";
 
 
 const registerThunk = createAsyncThunk<
@@ -10,7 +11,7 @@ const registerThunk = createAsyncThunk<
   const { rejectWithValue } = thunkAPI
 
   try {
-    await registrationAPI.register(arg.email, arg.password)
+    await authAPI.registration(arg.email, arg.password)
 
     return { isRegistered: true, isError: null }
   } catch (e: any) {
@@ -29,16 +30,17 @@ const registrationSlice = createSlice({
   },
   extraReducers:builder => {
     builder
-        .addCase(getProfile.fulfilled, (state, action) => {
-            state.user = action.payload.user
-        })
-        .addCase(updateStatus.fulfilled, (state, action) => {
-            state.user.status = action.payload.user.status
-        })
+    .addCase(registerThunk.fulfilled, (state, action) => {
+      state.isRegistered = action.payload.isRegistered
+    })
+    .addCase(registerThunk.rejected, (state, action) => {
+      console.log(action.payload)
+      state.isError = action.payload
+    })
 }
 
 })
 
-export const profileReducer = profileSlice.reducer
-export const {} = profileSlice.actions
-export const profileThunks = {getProfile, updateStatus}
+export const registrationReducer = registrationSlice.reducer
+export const {} = registrationSlice.actions
+export const registrationThunks = { registerThunk }
