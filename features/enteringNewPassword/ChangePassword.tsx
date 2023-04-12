@@ -87,7 +87,7 @@ export const ChangePassword = () => {
                                     id="standard-adornment-password"
                                     type={showPassword ? 'text' : 'password'}
                                     {...register('password')}
-                                    endAdornment={
+                                    // endAdornment={
                                         // <InputAdornment position="end">
                                         //     <IconButton
                                         //         aria-label="toggle password visibility"
@@ -97,7 +97,7 @@ export const ChangePassword = () => {
                                         //         {showPassword ? <VisibilityOff/> : <Visibility/>}
                                         //     </IconButton>
                                         // </InputAdornment>
-                                    }
+                                    // }
                                 />
                                 <p style={{color:"red", fontSize:"12px"}}>{errors.password?.message}</p>
                             </FormControl>
@@ -107,7 +107,7 @@ export const ChangePassword = () => {
                                     id="standard-adornment--confirm-password"
                                     type={showConfirmPassword ? 'text' : 'password'}
                                     {...register('confirmPassword')}
-                                    endAdornment={
+                                    // endAdornment={
                                         // <InputAdornment position="end">
                                         //     <IconButton
                                         //         aria-label="toggle password visibility"
@@ -116,7 +116,7 @@ export const ChangePassword = () => {
                                         //         {showConfirmPassword ? <VisibilityOff/> : <Visibility/>}
                                         //     </IconButton>
                                         // </InputAdornment>
-                                    }
+                                    // }
                                 />
                                 <p style={{color:"red", fontSize:"12px"}}>{errors.confirmPassword?.message}</p>
                             </FormControl>
