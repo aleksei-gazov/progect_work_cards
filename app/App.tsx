@@ -5,6 +5,7 @@ import { Profile } from '../features/profile/Profile';
 import { Registration } from '../features/registration/Registration';
 import { Routes, Route } from 'react-router-dom'
 import './style.css';
+import {  TableMU } from '../comman/components/table/Table';
 
 export default function App() {
   return (
@@ -14,14 +15,16 @@ export default function App() {
      {/* <Login/> */}
      {/* <Registration/> */}
 
-     <Routes>
+     {/* <Routes>
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/registration" element={<Registration />} />
+        <Route path="/registration" element={<Registration />} /> */}
         {/* <Route path="/password_recovery" element={<PasswordRecovery />} />
         <Route path="/entering_new_password" element={<NewPassword />} />
         <Route path="/*" element={<ErrorComponent />} /> */}
-      </Routes>
+      {/* </Routes> */}
+
+      {/* < TableMU/> */}
     </div>
   );
 }
