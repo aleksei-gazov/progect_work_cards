@@ -26,6 +26,7 @@ type UserSubmitForm = {
 };
 
 export const Registration = () => {
+  // const registerThunk = useActions(authThunks)
     const validationSchema = Yup.object().shape({
         email: Yup.string()
           .required('Email is required')
@@ -50,6 +51,9 @@ export const Registration = () => {
       });
     
       const onSubmit = (data) => {
+        if(data.password === data.confirmPassword) {
+          registerThunk(JSON.stringify(data))
+        }
         console.log(JSON.stringify(data));
       };
 

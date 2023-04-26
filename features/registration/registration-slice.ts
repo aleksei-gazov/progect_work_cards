@@ -3,13 +3,12 @@ import { authAPI } from "../../api/authAPI";
 import { AppRootState } from "../../app/store";
 
 
-const registerThunk = createAsyncThunk<
+const registerThunk =  createAppAsyncThunk<
   { isRegistered: boolean; isError: null | string },
   { email: string; password: string },
   { rejectValue: string; state: AppRootState }
 >('auth/register', async (arg, thunkAPI) => {
   const { rejectWithValue } = thunkAPI
-
   try {
     await authAPI.registration(arg.email, arg.password)
 
@@ -44,3 +43,4 @@ const registrationSlice = createSlice({
 export const registrationReducer = registrationSlice.reducer
 export const {} = registrationSlice.actions
 export const registrationThunks = { registerThunk }
+export const authThunks = { registerThunk };
