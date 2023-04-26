@@ -15,7 +15,10 @@ import { NavLink } from 'react-router-dom';
 // import IconButton from '@mui/material/IconButton';
 // import InputAdornment from '@mui/material/InputAdornment';
 // import { Visibility, VisibilityOff } from '@mui/icons-material'
-
+import InputAdornment from "@material-ui/core/InputAdornment";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import IconButton from "@material-ui/core/IconButton";
 type UserSubmitForm = {
   email: string;
   password: string;
@@ -67,11 +70,40 @@ export const Registration = () => {
                         <TextField type="password" label="password"
                                    margin="normal"
                                    {...register('password')}
+                                   
                         />
+                          {/* <TextField
+          id="standard-password-input"
+          label="Password"
+          // className={styles.textField}
+          type="passworrd"
+          autoComplete="current-password"
+          margin="normal"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment variant="filled" position="end">
+                <IconButton
+                  aria-label="Toggle password visibility"
+                  // onClick={this.handleClickShowPassword}
+                >
+                  <Visibility />
+                </IconButton>
+              </InputAdornment>
+            )
+          }}
+        /> */}
                         <TextField type="password" label="confirm password"
                                    margin="normal"
                                    {...register('confirmPassword')}                        
-                        />
+                        >
+                                     {/* <IconButton
+                  aria-label="Toggle password visibility"
+                  // onClick={handleClickShowPassword}
+                >
+                  <Visibility />
+                </IconButton> */}
+                          </TextField>
+                    
                              {/* <InputAdornment position="end">
                                    <IconButton
                                      aria-label="toggle password visibility"
